@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="25px"
+    android:paddingRight="25px"
+    android:paddingTop="25px">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="233px"
+        android:layout_height="173px"
+        android:layout_marginRight="30px"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_placeholder_2" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_image"
+        android:layout_toRightOf="@+id/iv_image"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Gong neng xue yisheng nicai nicai cnia "
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:id="@+id/tv_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_title"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="20px"
+        android:text="yingyangzhishi1"
+        android:textSize="@dimen/sp_10" />
+
+    <TextView
+        android:id="@+id/tv_browse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_image"
+        android:layout_alignLeft="@+id/tv_title"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginTop="15px"
+        android:drawableLeft="@drawable/ic_see"
+        android:drawablePadding="@dimen/dp_5"
+        android:text="30"
+        android:textSize="@dimen/sp_10" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_browse"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15px"
+        android:drawableLeft="@drawable/ic_calendar"
+        android:drawablePadding="@dimen/dp_5"
+        android:text="2017-09-08 15:25"
+        android:textSize="@dimen/sp_10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/iv_image"
+        android:layout_marginTop="25px"
+        android:background="@color/gray_light" />
+
+</RelativeLayout>
