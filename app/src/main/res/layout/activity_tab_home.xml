@@ -12,7 +12,7 @@
     <RelativeLayout
         android:id="@+id/rl_home_bottom"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="90px"
         android:layout_alignParentBottom="true"
         android:background="@color/bottom_navigation_color">
 

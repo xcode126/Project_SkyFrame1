@@ -43,7 +43,6 @@ public class FragmentHome extends CommonSuperFragment implements ApiRequestListe
 
     @Override
     protected void initViews(Bundle savedInstanceState) {
-        banner = view.findViewById(R.id.banner);
         mRecyclerView = view.findViewById(R.id.mRecyclerView);
         adapter = new HomeAdapter(getActivity());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -69,8 +68,8 @@ public class FragmentHome extends CommonSuperFragment implements ApiRequestListe
         if (StringUtils.isEquals(method,
                 ApiInterfaceTool.API_LoadHomeListData.getId())) {
             processHomeListData((List<HousesListModel>) result);
+            processHomeBannerData();
         } else if (StringUtils.isEquals(method, ApiInterfaceTool.API_LoadHomeBannerData.getId())) {
-            processHomeBannerData((List<BinnerImageModel>) result);
         }
     }
 
@@ -96,6 +95,7 @@ public class FragmentHome extends CommonSuperFragment implements ApiRequestListe
         }
         View headerView = LayoutInflater.from(getActivity()).inflate(R.layout.header_home_top, null);
         RecyclerView recyclerView = headerView.findViewById(R.id.rv_home);
+        banner = headerView.findViewById(R.id.banner);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         HomeHeaderAdapter homeHeaderAdapter = new HomeHeaderAdapter(getActivity());
         recyclerView.setAdapter(homeHeaderAdapter);
@@ -109,13 +109,17 @@ public class FragmentHome extends CommonSuperFragment implements ApiRequestListe
      *
      * @param list
      */
-    private void processHomeBannerData(List<BinnerImageModel> list) {
+    private void processHomeBannerData() {
         List imgList = new ArrayList();
-        if (list != null && list.size() > 0) {
-            for (BinnerImageModel model : list) {
-                imgList.add(model.getImage_source_url());
-            }
-        }
+//        if (list != null && list.size() > 0) {
+//            for (BinnerImageModel model : list) {
+//                imgList.add(model.getImage_source_url());
+//            }
+//        }
+        imgList.add("http://pic.58pic.com/58pic/12/85/36/81C58PICRsJ.jpg");
+        imgList.add("http://58pic.ooopic.com/58pic/12/85/74/05k58PIC4Wm.jpg");
+        imgList.add("http://pic.58pic.com/58pic/12/85/64/33458PICDjx.jpg");
+        imgList.add("http://img1.imgtn.bdimg.com/it/u=4106432293,2199303028&fm=27&gp=0.jpg");
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
         //设置图片集合
@@ -124,15 +128,15 @@ public class FragmentHome extends CommonSuperFragment implements ApiRequestListe
         banner.start();
     }
 
-//    @Override
-//    public void onHiddenChanged(boolean hidden) {
-//        super.onHiddenChanged(hidden);
-//        if (hidden) {
-//            //结束轮播
-//            banner.stopAutoPlay();
-//        } else {
-//            //开始轮播
-//            banner.startAutoPlay();
-//        }
-//    }
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (hidden) {
+            //结束轮播
+            banner.stopAutoPlay();
+        } else {
+            //开始轮播
+            banner.startAutoPlay();
+        }
+    }
 }

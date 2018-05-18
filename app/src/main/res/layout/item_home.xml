@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/iv_image"
-        android:layout_width="233px"
-        android:layout_height="173px"
+        android:layout_width="250px"
+        android:layout_height="180px"
         android:layout_marginRight="30px"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_placeholder_2" />
@@ -24,7 +24,7 @@
         android:maxLines="2"
         android:text="Gong neng xue yisheng nicai nicai cnia "
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp_14" />
+        android:textSize="34px" />
 
     <TextView
         android:id="@+id/tv_sign"
@@ -34,7 +34,7 @@
         android:layout_below="@+id/tv_title"
         android:layout_marginTop="20px"
         android:text="yingyangzhishi1"
-        android:textSize="@dimen/sp_10" />
+        android:textSize="28px" />
 
     <TextView
         android:id="@+id/tv_browse"
@@ -47,7 +47,7 @@
         android:drawableLeft="@drawable/ic_see"
         android:drawablePadding="@dimen/dp_5"
         android:text="30"
-        android:textSize="@dimen/sp_10" />
+        android:textSize="26px" />
 
     <TextView
         android:id="@+id/tv_time"
@@ -59,7 +59,7 @@
         android:drawableLeft="@drawable/ic_calendar"
         android:drawablePadding="@dimen/dp_5"
         android:text="2017-09-08 15:25"
-        android:textSize="@dimen/sp_10" />
+        android:textSize="26px" />
 
     <TextView
         android:layout_width="match_parent"
